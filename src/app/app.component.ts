@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PathToRegexpService } from 'ngx-path-to-regexp';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'pathToRegexp';
-  // constructor(private ngxPathToRegepx:){
-
-  // }
+  constructor(private ngxPathToRegepx: PathToRegexpService) {
+    console.log(ngxPathToRegepx.pathToRegexp('/user/:id/:name', null, null));
+  }
 }

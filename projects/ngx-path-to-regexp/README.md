@@ -1,24 +1,34 @@
+# What
+
+Turn a path string such as `/user/:name` into a regular expression
+
+# Where from
+
+https://github.com/pillarjs/path-to-regexp
+
+
 # NgxPathToRegexp
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+https://github.com/ferried/NgxPathToRegexp
 
-## Code scaffolding
+# How To Use
 
-Run `ng generate component component-name --project NgxPathToRegexp` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project NgxPathToRegexp`.
-> Note: Don't forget to add `--project NgxPathToRegexp` or else it will be added to the default project in your `angular.json` file. 
+```npm
+npm install ngx-path-to-regexp@latest
+```
 
-## Build
+```ts
+import { Component } from '@angular/core';
+import { PathToRegexpService } from 'ngx-path-to-regexp';
 
-Run `ng build NgxPathToRegexp` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Publishing
-
-After building your library with `ng build NgxPathToRegexp`, go to the dist folder `cd dist/ngx-path-to-regexp` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test NgxPathToRegexp` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.less']
+})
+export class AppComponent {
+  constructor(private ngxPathToRegepx: PathToRegexpService) {
+    console.log(ngxPathToRegepx.pathToRegexp('/user/:id/:name', null, null));
+  }
+}
+```
